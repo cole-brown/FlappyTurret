@@ -1,0 +1,91 @@
+#+SEQ_TODO: todo started rough-draft draft1 draft2 draft3 waiting ready-for-pdf done
+#+ARCHIVE: ::* archive
+
+--------------------------------------------------------------------------------
+                                 Flappy Turrets
+--------------------------------------------------------------------------------
+                              Anet Mobile Test p1
+
+* Arts
+
+- Basic [5/5]
+  - [X] background
+  - [X] floor
+  - [X] bird
+  - [X] turret
+  - [X] bullet
+  
+- Polish [0/5]
+  - [ ] sprite anims
+    - [ ] idle
+    - [ ] dead
+    - [ ] flap
+  - [ ] bullet death fx
+  - [ ] scrolling ground
+  - [ ] parallex layers
+  - [ ] more turret skins?
+Ignoring - too much arting. Will go for some of mentioned, more programmery bonuses.
+
+* Code
+
+- Basic [5/5]
+  - [X] Mover
+    - [X] Turrets in -x
+    - [X] bullets in +forward+ right.
+  - [X] Player
+    - [X] +y force on input
+    - [X] death - hit by bullet, turret, floor
+    - [X] don't let get too high
+  - [X] Turret
+    - [X] scoring turrets
+    - [X] fire at player if player within range of bullet spawn point
+  - [X] Destroy
+    - [X] on contact (bullet hits anything)
+    - [X] on exit (turret/bullet leaves screen)
+  - [X] game manager
+    - [X] spawn/despawn turrets
+    - [X] Start turret spawns on first player input, not on play.
+
+- UI [2/2]
+  - [X] in game
+    - [X] score
+  - [X] post game
+    - [X] score/best
+    - [X] restart button
+
+- Polish [1/1]
+  - [X] tilt player based on y velocity +45 deg -> -90 deg
+
+- Bonus [2/3]
+  - [X] consumables
+    - [X] bonus points
+    - [X] extra jump
+    - [X] extra gravity
+  - [X] UI/score
+  - [ ] turrets
+    - [ ] burst shot
+    - [ ] no shot
+    - [ ] triple shot
+
+* Flappy Bird
+
+tall resolution:
+  - 480x640
+  - 80 px for floor
+  - bird is 57x42
+
+movement:
+  - use gravity
+  - autoscroll - leave bird center x, scroll turrets -x
+  - flap for force on Y axis
+
+obstacles:
+  - score is number of obstacles passed
+  - best score stored
+  - 3.5 s to first on screen
+  - ~2 s to scroll across
+  - appear at regular intervals
+    - 1.5 - 2s between obstacles
+  - collider OnEnter -> death
+
+
